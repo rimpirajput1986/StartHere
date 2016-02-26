@@ -28,7 +28,7 @@ public class NthPrime {
 		{
 			if((nthPrime % primes.get(i)) == 0)
 			{
-				System.out.println("No. "+nthPrime+"is not Prime, it is divisible by"+i);
+				System.out.println("No. "+nthPrime+"is not Prime, it is divisible by"+primes.get(i));
 				return false;
 			}
 		}
