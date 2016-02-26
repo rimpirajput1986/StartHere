@@ -24,7 +24,7 @@ public class NthPrime {
 	}
 	public static boolean checkIfPrime(int nthPrime, ArrayList<Integer> primes){
 		int sqrt = (int) Math.sqrt(nthPrime);
-		for (int i=0; i < primes.size(); i++)
+		for (int i=0; i <= sqrt && i < primes.size(); i++)
 		{
 			if((nthPrime % primes.get(i)) == 0)
 			{
