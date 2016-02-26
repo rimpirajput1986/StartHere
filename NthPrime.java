@@ -14,7 +14,7 @@ public class NthPrime {
 		ArrayList<Integer> primes = new ArrayList<Integer>();
 		while(primes.size()<n)
 		{
-			if (checkIfPrime(nthPrime))
+			if (checkIfPrime(nthPrime, primes))
 			{
 				primes.add(nthPrime);
 			}
@@ -22,16 +22,17 @@ public class NthPrime {
 		}
 		System.out.println("Nth Prime is: "+primes.get(n-1));
 	}
-	public static boolean checkIfPrime(int nthPrime){
+	public static boolean checkIfPrime(int nthPrime, ArrayList<Integer> primes){
 		int sqrt = (int) Math.sqrt(nthPrime);
-		for (int i=2; i <= sqrt; i++)
+		for (int i=0; i < primes.size(); i++)
 		{
-			if((nthPrime % i) == 0)
+			if((nthPrime % primes.get(i)) == 0)
 			{
 				System.out.println("No. "+nthPrime+"is not Prime, it is divisible by"+i);
 				return false;
 			}
 		}
+//		primes.add(nthPrime);
 		System.out.println("No. "+nthPrime+"is Prime");
 		return true;
 	}
