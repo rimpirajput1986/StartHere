@@ -12,6 +12,7 @@ public class NthPrime {
 		int n = scanner.nextInt();
 		int nthPrime = 3;
 		ArrayList<Integer> primes = new ArrayList<Integer>();
+		primes.add(2);
 		while(primes.size()<n)
 		{
 			if (checkIfPrime(nthPrime, primes))
@@ -24,7 +25,7 @@ public class NthPrime {
 	}
 	public static boolean checkIfPrime(int nthPrime, ArrayList<Integer> primes){
 		int sqrt = (int) Math.sqrt(nthPrime);
-		for (int i=0; i <= sqrt && i < primes.size(); i++)
+		for (int i=0; primes.get(i) <= sqrt ; i++)
 		{
 			if((nthPrime % primes.get(i)) == 0)
 			{
